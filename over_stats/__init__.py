@@ -110,7 +110,7 @@ class PlayerProfile:
            
         
             rank = self._r.html.find(f'div[class="competitive-rank-level"]')
-            self._model[MODES][MODE_CP]['SR'] = rank[0].text()
+            self._model[MODES][MODE_CP]['SR'] = rank[0].text
 
     @staticmethod
     def generate_comparison_stats(html, comparison_value, use_decimal=False):
