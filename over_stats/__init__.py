@@ -108,7 +108,8 @@ class PlayerProfile:
                 achievements_dict[achievement_type] = achievement_dict
             self._model[ACHIEVEMENTS] = achievements_dict
            
-            rank = html.find(f'div[class="competitive-rank-level"]')
+        
+            rank = self._r.html.find(f'div[class="competitive-rank-level"]')
             self._model[MODES][MODE_CP]['SR'] = rank[0].text()
 
     @staticmethod
