@@ -107,6 +107,9 @@ class PlayerProfile:
                 achievement_dict = self.generate_achievement_list(self._r.html, achievement_type_value)
                 achievements_dict[achievement_type] = achievement_dict
             self._model[ACHIEVEMENTS] = achievements_dict
+           
+            rank = html.find(f'div[class="competitive-rank-level"]')
+            self._model[MODES][MODE_CP]['SR'] = rank[0].text()
 
     @staticmethod
     def generate_comparison_stats(html, comparison_value, use_decimal=False):
